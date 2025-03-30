@@ -67,7 +67,7 @@ jobs:
         df -hT $GITHUB_WORKSPACE
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         cd openwrt
-        git apply --state $GITHUB_WORKSPACE/opizero3-1.5GB-trim-from-u-boot-v2024.01.patch
+        git apply --stat $GITHUB_WORKSPACE/opizero3-1.5GB-trim-from-u-boot-v2024.01.patch
         git apply --check $GITHUB_WORKSPACE/opizero3-1.5GB-trim-from-u-boot-v2024.01.patch
         git apply $GITHUB_WORKSPACE/opizero3-1.5GB-trim-from-u-boot-v2024.01.patch
         echo "OPENWRT_PATH=$PWD" >> $GITHUB_ENV
