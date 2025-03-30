@@ -67,9 +67,7 @@ jobs:
         df -hT $GITHUB_WORKSPACE
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         cd openwrt
-        git apply --stat $GITHUB_WORKSPACE/opizero3-1.5GB-trim-from-u-boot-v2024.01.patch
-        git apply --check $GITHUB_WORKSPACE/opizero3-1.5GB-trim-from-u-boot-v2024.01.patch
-        git apply $GITHUB_WORKSPACE/opizero3-1.5GB-trim-from-u-boot-v2024.01.patch
+        rm -rf $GITHUB_WORKSPACE/package/boot/uboot-sunxi/patches/261-sunxi-add-popstick-defconfig.patch
         echo "OPENWRT_PATH=$PWD" >> $GITHUB_ENV
         COMMIT_AUTHOR=$(git show -s --date=short --format="作者: %an")
         echo "COMMIT_AUTHOR=$COMMIT_AUTHOR" >> $GITHUB_ENV
